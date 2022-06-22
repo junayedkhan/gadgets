@@ -1,0 +1,44 @@
+.trending_section .inner .tending_content{
+    padding: 35px;
+    background-color: #f3f5f7;
+    border-radius: 15px;
+    @include transition;
+
+    &:hover{
+        background-color: $paletteColor1;
+
+        .title, 
+        .description{
+            color: #ffffff;
+        }
+    }
+
+    
+    @media #{$sm_layout} {
+        text-align: center;
+    }
+    
+
+}
+
+.trending_section .inner .tending_content .title{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $paletteColor4;
+    @include transition;
+}
+
+.trending_section .inner .tending_content .block_divider{
+    width: 30%;
+    height: 2px;
+    background-color: $paletteColor5;
+}
+
+.trending_section .inner .tending_content .description{
+    font-size: 15px;
+    color: $paletteColor3;
+    font-family: 600;
+    opacity: 0.5;
+    @include transition;
+}

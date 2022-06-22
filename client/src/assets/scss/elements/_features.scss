@@ -1,0 +1,117 @@
+.features_section .inner{
+    padding: 80px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 50px;
+    position: relative;
+    overflow: hidden;
+
+    &::before{
+        bottom: 0;
+        content: ""!important;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-image: linear-gradient(220deg, #111518 41%, #4928cf 100%);
+        z-index: -1;
+    }
+
+    @media #{$md_layout, $sm_layout} {
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 80px;
+    }
+
+    @media #{$sm_layout} {
+        padding: 40px;
+    }
+}
+
+.features_section .inner .text_content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    @media #{$sm_layout} {
+        align-items: center;
+    }
+}
+
+.features_section .inner .text_content .Product_name{
+    font-size: 60px;
+    font-weight: 700;
+    color: #ffffff;
+
+    @media #{$sm_layout} {
+        font-size: 40px;
+    }
+}
+
+.features_section .inner .text_content .description{
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+
+    @media #{$sm_layout} {
+        text-align: center;
+    }
+}
+
+.features_section .inner .text_content .button_group {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+
+    @media #{$small_mobile} {
+        flex-direction: column ;
+        row-gap: 20px;
+    }
+}
+
+.features_section .inner .text_content .button_group .button_1 {
+    @include button;
+    padding: 15px 35px;
+
+    &:hover {
+        background-color: $paletteColor4;
+    }
+}
+
+.features_section .inner .text_content .button_group .button_2 {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: $paletteColor6;
+    opacity: 0.5;
+    transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+
+    &:hover {
+        color: $paletteColor8;
+        opacity: 1;
+    }
+}
+
+.features_section .inner .text_content .button_group .button_2 .icon {
+    font-size: 20px;
+}
+
+.features_section .inner .img_content{
+    margin: 0 20px;
+}
+
+.features_section .inner .img_content .product_img{
+    border: 0;
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
