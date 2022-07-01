@@ -1,0 +1,431 @@
+.about_page .breadcrumb_section .inner{
+    padding-top: 80px;
+    padding-bottom: 200px;
+}
+
+.about_page .about_content .about_img{
+    margin-top: -160px;
+}
+
+.about_page .about_content .about_img .img{
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    object-fit: cover;
+    border-radius: 16px 16px 0px 0px;
+
+    @media #{$sm_layout} {
+        height: 250px;
+    }
+}
+
+.about_page .about_content .about_text{
+    border-radius: 0px 0px 16px 16px;
+    margin-bottom: 120px;
+}
+
+.about_page .about_content .about_text .item{
+    padding: 45px 35px;
+    height: auto;
+    box-shadow: none;
+    @include transition;
+}
+
+.about_page .about_content .about_text .item:hover{
+    background-color: $paletteColor1;
+}
+
+.about_page .about_content .about_text .item .title{
+    font-size: 20px;
+    font-weight: 700;
+    color: $paletteColor4;
+    margin-bottom: 10px;
+}
+
+.about_page .about_content .about_text .item .subtitle{
+    font-size: 16px;
+    @include apple_system_font;
+    color: $paletteColor4;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.about_page .about_content .about_text .item .desc{
+    font-size: 16px;
+    @include apple_system_font;
+    color: $paletteColor3;
+}
+
+.about_page .about_content .about_text .item:nth-child(1){
+    border-radius: 0px 0px 0px 16px;
+    background: #f3f5f7;
+
+    @media #{$md_layout, $sm_layout} {
+        border-radius: 0px 0px 0px 0px;
+    }
+}
+
+.about_page .about_content .about_text .item:nth-child(2){
+    background-color: #eceef0;
+}
+
+.about_page .about_content .about_text .item:nth-child(3){
+    background-color: #e2e6ea;
+
+    @media #{$md_layout} {
+        border-radius: 0px 0px 0px 16px;
+    }
+}
+
+.about_page .about_content .about_text .item:nth-child(4){
+    border-radius: 0px 0px 16px 0px;
+    background-color: #dadee3;
+
+    @media #{$sm_layout} {
+        border-radius: 0px 0px 16px 16px;
+    }
+}
+
+.about_page .about_content .about_text .item:nth-child(1),
+.about_page .about_content .about_text .item:nth-child(2),
+.about_page .about_content .about_text .item:nth-child(3),
+.about_page .about_content .about_text .item:nth-child(4){
+
+    &:hover{
+        background-color: $paletteColor1;
+        
+        .title, .subtitle{
+            color: #ffffff !important;
+        }
+
+        .desc{
+            color: #ffffff95 !important;
+        }
+    }
+}
+
+.about_page .about_content .counter{
+    margin-bottom: 40px;
+}
+
+.about_page .about_content .counter .counter_heading{
+    text-align: center;
+}
+
+.about_page .about_content .counter .counter_heading .heading_text{
+    font-size: 45px;
+    color: $paletteColor4;
+    font-weight: 700;
+    line-height: 70px;
+
+    @media #{$md_layout} {
+        font-size: 40px;
+    }
+
+    @media #{$sm_layout} {
+        font-size: 25px;
+        line-height: 40px;
+    }
+}
+
+.about_page .about_content .counter .counter_item{
+    max-width: 750px;
+    margin: 80px auto;
+}
+
+.about_page .about_content .counter .counter_item .item{
+    text-align: center;
+}
+
+.about_page .about_content .counter .counter_item .item .number{
+    font-size: 50px;
+    font-weight: 800;
+    @include apple_system_font;
+    color: $paletteColor1;
+    margin-bottom: 10px;
+}
+
+.about_page .about_content .counter .counter_item .item .text{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include apple_system_font;
+    color: $paletteColor4
+}
+
+.about_page .about_content .counter .subtitle{
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about_page .about_content .counter .subtitle .subtitle_text{
+    font-size: 16px;
+    @include apple_system_font;
+    color: #39414d;
+}
+
+.about_page .about_content .button_group{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    column-gap: 30px;
+    margin-bottom: 120px;
+
+    @media #{$small_mobile} {
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+    }
+}
+
+.about_page .about_content .button_group .link{
+    @include button;
+    padding: 15px 35px;
+    width: fit-content;
+}
+
+.about_page .video_section .video_thumb{
+    position: relative;
+
+    &::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $paletteColor4;
+        opacity: 0.5;
+        z-index: 999;
+    }
+
+    &:hover{
+        .play_button{
+            background-color: #ffffff;
+            .icon{
+                color: $paletteColor1;
+            }
+        }
+    }
+}
+
+.about_page .video_section .video_thumb .img{
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    object-fit: cover;
+
+    @media #{$sm_layout} {
+        height: 250px;
+    }
+}
+
+.about_page .video_section .video_thumb .play_button{
+    width: 75px;
+    height: 75px;
+    border: none;
+    border-radius: 50%;
+    background-color: $paletteColor1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include transition;
+    z-index: 1000;
+}
+
+.about_page .video_section .video_thumb .play_button .icon{
+    font-size: 35px;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+.about_page .video_section .react_model{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.about_page .video_section .react_model.active{
+    display: block;
+}
+
+.about_page .video_section .react_model .overlay{
+    z-index: -1;
+    background: rgba(0,0,0,.7);
+    transition: opacity .35s;
+}
+
+.about_page .video_section .react_model .close_button{
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.about_page .video_section .react_model .close_button .icon{
+    color: #ffffff;
+    font-size: 26px;
+}
+
+.about_page .video_section .react_model .react_model_inner{
+    position: fixed;
+    width: 90vw;
+    height: 90vh;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+    @media #{$md_layout} {
+        height: 80vh;
+    }
+
+    @media #{$sm_layout} {
+        height: 60vh;
+    }
+
+    @media #{$large_mobile} {
+        height: 40vh;
+    }
+}
+
+.about_page .client_section{
+    padding: 100px 0;
+    background-color: $paletteColor4;
+}
+
+.about_page .client_section .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.about_page .client_section .item:nth-child(1){
+
+    height: 55px !important;
+}
+
+.about_page .client_section .item:nth-child(2){
+
+    height: 55px !important;
+}
+
+.about_page .client_section .item:nth-child(3){
+
+    height: 55px !important;
+}
+
+.about_page .client_section .item:nth-child(4){
+
+    height: 55px !important;
+}
+
+.about_page .client_section .item:nth-child(5){
+
+    height: 55px !important;
+}
+
+.about_page .client_section .item:nth-child(6){
+
+    height: 55px !important;
+}
+
+.about_page .client_section .item img{
+    width: auto;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.about_page .testimonials{
+    margin-top: 120px;
+    margin-bottom: 60px;
+}
+
+.about_page .testimonials .testimonials_heading{
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.about_page .testimonials .testimonials_heading .heading_text{
+    font-size: 30px;
+    font-weight: 700;
+    color: $paletteColor4;
+}
+
+.about_page .testimonials .item{
+    padding: 55px 40px;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    background-color: #fff;
+    box-shadow: $shadow_1;
+}
+
+.about_page .testimonials .item .author_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.about_page .testimonials .item .author_img .img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.about_page .testimonials .item .review .desc{
+    font-size: 16px;
+    @include apple_system_font;
+    color: $paletteColor3;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about_page .testimonials .item .review .author_name{
+    font-size: 16px;
+    font-weight: 700;
+    color: $paletteColor4;
+    text-align: center;
+}
+
+.about_page .testimonials .item .review .author_work{
+    font-size: 15px;
+    font-weight: 600;
+    color: $paletteColor3;
+    text-align: center;
+} 
+
+.about_page .testimonials .all_reviews_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_page .testimonials .all_reviews_button .button{
+    @include button;
+    padding: 15px 35px;
+}
+
+.about_page .testimonials .all_reviews_button .button .link{
+    &:hover {
+        color: $paletteColor8;
+    }
+}
+
+.about_page .testimonials .all_reviews_button .button .icon{
+    font-size: 14px;
+    margin-left: 10px;
+}

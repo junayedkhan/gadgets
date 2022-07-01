@@ -242,8 +242,14 @@
     font-size: 20px;
     font-weight: 700;
     color: $paletteColor4;
-    border-bottom: 1px solid $paletteColor5; 
     padding-bottom: 14px;
+}
+
+.product_details .content .desc_review_section .tabs .tab_panel 
+.reviews .preview .no_reviews{
+    font-size: 13px;
+    @include apple_system_font;
+    color: $paletteColor3;
 }
 
 .product_details .content .desc_review_section .tabs .tab_panel 
@@ -255,6 +261,8 @@
 .reviews .preview .comment_list .comment_item{
     display: flex;
     column-gap: 50px;
+    padding-left: 70px;
+    position: relative;
 }
 
 .product_details .content .desc_review_section .tabs .tab_panel 
@@ -263,16 +271,54 @@
 }
 
 .product_details .content .desc_review_section .tabs .tab_panel 
-.reviews .preview .comment_list .comment_item figure .img{
+.reviews .preview .comment_list .comment_item .avater{
     border-radius: 100%;
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 0;
+    top: 6px;
 }
 
 .product_details .content .desc_review_section .tabs .tab_panel 
-.reviews .preview .comment_list .comment_item .name_and_star{
-    display: flex;
-    justify-content: space-between;
+.reviews .preview .comment_list .comment_item .text .name{
+    font-size: 16px;
+    @include apple_system_font;
+    color: $paletteColor3;
+    font-weight: 500;
+}
+
+.product_details .content .desc_review_section .tabs .tab_panel 
+.reviews .preview .comment_list .comment_item .text .rating button[type="button"]{
+    margin-right: 6px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.product_details .content .desc_review_section .tabs .tab_panel 
+.reviews .preview .comment_list .comment_item .text .rating button[type="button"].on {
+    color: #FFA500;
+}
+
+.product_details .content .desc_review_section .tabs .tab_panel 
+.reviews .preview .comment_list .comment_item .text .rating button[type="button"].off {
+    color: #ccc;
+}
+
+.product_details .content .desc_review_section .tabs .tab_panel 
+.reviews .preview .comment_list .comment_item .text .rating button[type="button"] .star{
+    font-size: 20px;
+}
+
+.product_details .content .desc_review_section .tabs .tab_panel 
+.reviews .preview .comment_list .comment_item .text .comment{
+    margin-top: 20px;
+    font-size: 16px;
+    @include apple_system_font;
+    color: $paletteColor3;
 }
 
 .product_details .content .desc_review_section .tabs .tab_panel 
@@ -333,23 +379,7 @@
 
 .product_details .content .desc_review_section .tabs .tab_panel
 .reviews .comment_area .comment_form .comment_textarea #textarea{
-    padding: 12px;
-    appearance: none;
-    outline: none;
-    width: 100%;
-    height: 147px;
-    resize: vertical;
-    font-size: 14px;
-    font-family: inherit;
-    color: $paletteColor3;
-    border: 1px solid $paletteColor6;
-    border-radius: 3px;
-    background-color: transparent;
-    @include transition;
-
-    &:focus{
-        border: 1px solid $paletteColor1; 
-    }
+    @include textarea;
 }
 
 .product_details .content .desc_review_section .tabs .tab_panel
@@ -367,59 +397,12 @@
 .reviews .comment_area .comment_form .author #name,
 .product_details .content .desc_review_section .tabs .tab_panel
 .reviews .comment_area .comment_form .author #email{
-    padding: 12px;
-    appearance: none;
-    outline: none;
-    width: 100%;
-    height: 50px;
-    font-size: 14px;
-    font-family: inherit;
-    border: 1px solid $paletteColor6;
-    border-radius: 3px;
-    background-color: transparent;
-    @include transition;
-
-    &:focus{
-        border: 1px solid $paletteColor1; 
-    }
+    @include input;
 }
 
 .product_details .content .desc_review_section .tabs .tab_panel
 .reviews .comment_area .comment_form .comment_author_cookies_consent #checkbox{
-    display: inline-block;
-    vertical-align: baseline;
-    position: relative;
-    top: 3px;
-    min-width: 16px;
-    width: 16px;
-    height: 16px;
-    padding: 0 !important;
-    margin-right: 10px;
-    border-radius: 3px;
-    appearance: none;
-    border: 1px solid $paletteColor5;
-    cursor: pointer;
-    background: transparent;
-    @include transition;
-    position: relative;
-
-    &::before{
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        margin: auto;
-        width: 8px;
-        height: 5px;
-        border: 2px solid #fff;
-        border-top: none;
-        border-right: none;
-        transform: rotate(-45deg);
-        z-index: 2;
-    }
+    @include checkbox;
 }
 
 .product_details .content .desc_review_section .tabs .tab_panel

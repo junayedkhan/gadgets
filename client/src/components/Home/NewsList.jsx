@@ -1,60 +1,42 @@
-import React, { useState, useEffect } from 'react'
-import axios from "axios"
+import React from 'react'
 import SectionHeader from '../SectionHeader';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useGetBlogsQuery } from '../../redux/features/api/apiSlice';
+import Blog from '../Blog/Blog';
 
 const NewsList = () => {
 
-    const [news, setNews] = useState([])
-    const fatch_product = async() => {
-        const res = await axios.get(`http://localhost:8000/news`)
-        .catch((err) => console.log(err))
-        setNews(res.data)
-    }
-    
-    useEffect(() => {
-        fatch_product()
-    },[])
+    const {
+        data: blogs,
+        isLoading,
+        isSuccess,
+        isError,
+    } = useGetBlogsQuery()
 
   return (
     <div className="news_list">
         <SectionHeader 
             title={"Latest News"}
             subTitle={"Feugiat pretium nibh ipsum consequat commodo."}
-            link={""}
+            link={"/blogs"}
         />
         <Container>
             <Row>
-                {news.map((item, index) => {
+                {isLoading && <p>Loading...</p>}
+                {isSuccess && blogs.slice(0, 3).map((item, index) => {
                     return(
-                    <Col lg={4} md={6} sm={12} key={index} className="gy-4">
-                        <article className="news_card">
-                            <div className="image">
-                                <Link to={''}>
-                                    <img src={item.img} alt={item.title} />
-                                </Link>
-                            </div>
-                            <div className="content">
-                                <Link to={""} className="meta">
-                                    {item.meta}
-                                </Link>
-                                <Link to={""}>
-                                    <h3 className="title">
-                                        {item.title.substring(0, 40) + "..."}		
-                                    </h3>
-                                </Link>
-                                <p className="excerpt" data-cards="cover">
-                                    {item.desc.substring(0, 63) + "..."}
-                                </p>
-                                <Link to={""}>
-                                    <button className="button">Read More</button>
-                                </Link>
-                            </div>
-                        </article>
+                    <Col lg={4} md={6} sm={12} key={index} className="_mb_24">
+                        <Blog
+                            img={item.img}
+                            title={item.title}
+                            meta={item.meta}
+                            desc={item.desc}
+                            link={item.id}
+                        />
                     </Col>
                     )
                 })}
+                {isError && <p>Somthing went worng1</p>}
             </Row>
         </Container>
         

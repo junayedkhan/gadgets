@@ -7,8 +7,12 @@ import Home from '../components/Home/Index';
 import Products from "../components/Products/Index"
 import Cart from "../components/cart/Index"
 import { ProductDetails } from './../components/Products/ProductDetails';
+import About from "../components/about/Index"
+import Blog from "../components/Blog/Index"
 import Newlatter from '../components/Newlatter';
 import Footer from '../components/Footer';
+import BlogDetails from '../components/Blog/BlogDetails';
+import Contact from "../components/contact/Index"
 
 const Router = () => {
   return (
@@ -20,6 +24,10 @@ const Router = () => {
           <Route path="/products" element={<Products />}/>
           <Route path="/products/:productId" element={<ProductDetails />}/>
           <Route path="/cart" element={<Cart />}/>
+          <Route path="/about" element={<About />} />
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/blogs/:blogId" element={<BlogDetails />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Newlatter />
         <Footer />

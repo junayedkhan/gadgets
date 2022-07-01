@@ -7,16 +7,29 @@
 }
 
 ._mb_50{
-    @media #{ $sm_layout} {
+    @media #{$sm_layout} {
         margin-bottom: 50px !important;
     }
 }
 
 
+._mb_24{
+    margin-bottom: 24px;
+}
+
+._mb_50{
+    margin-bottom: calc(50px - 24px);
+}
 
 ._mt_120{
     @media #{$lg_layout, $md_layout, $sm_layout} {
         margin-top: 120px !important;
+    }
+}
+
+.mb_50{
+    @media #{$md_layout, $sm_layout} {
+        margin-bottom: 50px;
     }
 }
 

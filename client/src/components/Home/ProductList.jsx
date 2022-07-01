@@ -26,7 +26,7 @@ const ProductList = () => {
                         {isSuccess && 
                             products.slice(0, 6).map((item, index) => {
                                 return(
-                                    <Col lg={4} md={6} sm={12} key={index}>
+                                    <Col lg={4} md={6} sm={6} key={index}>
                                         <Porduct 
                                             img={item.img}
                                             title={item.title}

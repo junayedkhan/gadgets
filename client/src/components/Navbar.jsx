@@ -3,11 +3,8 @@ import { Container } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
 import {
     FaSearch,
-    FaShoppingCart,
-    FaFacebookF,
-    FaYoutube
+    FaShoppingCart
 } from "react-icons/fa";
-import { BsFillMouseFill } from "react-icons/bs";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import SocialShare from './SocialShare';
 
@@ -19,8 +16,8 @@ const Navbar = () => {
     const nav_link = [
         {link: "/", name: "Home"},
         {link: "/products", name: "products"},
-        {link: "/about", name: "about"},
-        {link: "/blog", name: "blog"},
+        {link: "/about", name: "about Us"},
+        {link: "/blogs", name: "blog"},
         {link: "/contact", name: "contact"}
     ]
 

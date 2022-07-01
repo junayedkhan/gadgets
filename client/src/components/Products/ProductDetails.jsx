@@ -18,7 +18,8 @@ export const ProductDetails = () => {
     isError,
   } = useGetProductQuery(productId)
 
-  const [hover, setHover] = useState(null);
+  const [hover, setHover] = useState(0);
+  const [rating, setRating] = useState(0)
   const [data, setData] = useState([])
 
   const [state, setState] = useState({
@@ -34,10 +35,11 @@ export const ProductDetails = () => {
     setState({...state, [name]: value, checkbox: checked})
   }
 
-  const HandleformSubmit = (e) => {
+  const HandleformSubmit = async(e) => {
     e.preventDefault();
-    setData([...data, {...state, _id: productId }])
-    setState({...state, name: "", email: "", comment: "", rating: null})
+    setData([...data, {...state, _id: productId, rating: rating }])
+    setState({...state, name: "", email: "", comment: ""})
+    setRating(0)
   }
 
   console.log(data)
@@ -139,22 +141,32 @@ export const ProductDetails = () => {
                     <div className="preview">
                       <h2 className="title">Reviews</h2>
                       {data.length === 0 ? 
-                        <div>No Reviews this time!</div> : 
+                        <p className="no_reviews">There are no reviews yet.</p> : 
                         <ul className="comment_list">
                           {data
                           .filter(id => id._id === productId)
                           .map((item, index) => {
                             return(
                               <li className="comment_item" key={index}>
-                                <figure>
-                                  <img src={img_01} alt="" className="img"/>
-                                </figure>
-                                <div className="name_and_star">
-                                  <div>
-                                    <h6>{item.name}</h6>
+                                <img src={img_01} alt="" className="avater"/>
+                                <div className="text">
+                                  <div className="rating">
+                                    {[...Array(5)].map((star, index) => {
+                                      index += 1;
+                                      return (
+                                        <button
+                                          type="button"
+                                          key={index}
+                                          className={index <= item.rating ? "on" : "off"}
+                                        >
+                                          <span className="star">&#9733;</span>
+                                        </button>
+                                      );
+                                    })}
                                   </div>
-                                  <div>
-                                    <p>{item.rating}</p>
+                                  <h6 className="name">{item.name}</h6>
+                                  <div className="comment">
+                                    <p>{item.comment}</p>
                                   </div>
                                 </div>
                               </li>
@@ -177,8 +189,10 @@ export const ProductDetails = () => {
                                 <button
                                   type="button"
                                   key={index}
-                                  className={index <= (hover || state.rating) ? "on" : "off"}
-                                  onClick={() => setState({...state, rating: index})}
+                                  // className={index <= (hover || state.rating) ? "on" : "off"}
+                                  // onClick={() => setState({...state, rating: index})}
+                                  className={index <= (hover || rating) ? "on" : "off"}
+                                  onClick={() => setRating(index)}
                                   onMouseEnter={() => setHover(index)}
                                   onMouseLeave={() => setHover(0)}
                                 >
