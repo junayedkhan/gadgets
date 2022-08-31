@@ -1,0 +1,112 @@
+{
+    "products" : [
+    {
+        "id": 1,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617762/gadgets/product-1_a585c0.webp",
+        "title": "AirPods Pro",
+        "price": "120.00",
+        "meta": "gadgets"
+    },
+    {
+        "id": 2,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617762/gadgets/product-2_kb4qxb.webp",
+        "title": "AirTag",
+        "price": "220.00",
+        "meta": "gadgets"
+    },
+    {
+        "id": 3,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617763/gadgets/product-3_irtu9c.webp",
+        "title": "Apple Watch Series 6",
+        "price": "620.00",
+        "meta": "gadgets"
+    },
+    {
+        "id": 4,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617763/gadgets/product-4_dt2ayv.webp",
+        "title": "HTC Vive Pro 2",
+        "price": "320.00",
+        "meta": "gadgets"
+    },
+    {
+        "id": 5,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617762/gadgets/product-5_ilivb3.webp",
+        "title": "XBOX Series X",
+        "price": "420.00",
+        "meta": "gaming"
+    },
+    {
+        "id": 6,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617762/gadgets/product-6_srorwn.webp",
+        "title": "XBOX Elite Controller",
+        "price": "399.00",
+        "meta": "gaming"
+    },
+    {
+        "id": 7,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617763/gadgets/product-7_wbc6kn.webp",
+        "title": "Valve Index Knuckles",
+        "price": "180.00",
+        "meta": "gadgets"
+    },
+    {
+        "id": 8,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617763/gadgets/product-8_wfysrd.webp",
+        "title": "Razer Blackshark",
+        "price": "500.00",
+        "meta": "gadgets"
+    },
+    {
+        "id": 9,
+        "img": "https://res.cloudinary.com/dfdrkfy6y/image/upload/v1654617763/gadgets/product-9_eldlpq.webp",
+        "title": "Samsung Galaxy S21",
+        "price": "799.00",
+        "meta": "mobile"
+    }
+    ],
+
+    "blogs": [
+        {
+            "id": 1,
+            "img": "https://demo.creativethemes.com/blocksy/gadgets/wp-content/uploads/2022/05/article-image-5-1024x849.webp",
+            "meta": "usefull",
+            "title": "Amet Commodo Nulla Facilisi Vehicula Ipsum",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+        },
+        {
+            "id": 2,
+            "img": "https://demo.creativethemes.com/blocksy/gadgets/wp-content/uploads/2022/05/article-image-4-1024x849.webp",
+            "meta": "GADGETS",
+            "title": "Urnaneque Viverra Justo Ultrices Sapieneget",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+        },
+        {
+            "id": 3,
+            "img": "https://demo.creativethemes.com/blocksy/gadgets/wp-content/uploads/2022/05/article-image-6-768x637.webp",
+            "meta": "EXPIRIENCE",
+            "title": "Tristique Magna Amet Purus Gravida Quisblandit",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+        },
+        {
+            "id": 4,
+            "img": "https://demo.creativethemes.com/blocksy/gadgets/wp-content/uploads/2022/05/article-image-5-1024x849.webp",
+            "meta": "usefull",
+            "title": "Amet Commodo Nulla Facilisi Vehicula Ipsum",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+        },
+        {
+            "id": 5,
+            "img": "https://demo.creativethemes.com/blocksy/gadgets/wp-content/uploads/2022/05/article-image-4-1024x849.webp",
+            "meta": "GADGETS",
+            "title": "Urnaneque Viverra Justo Ultrices Sapieneget",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+        },
+        {
+            "id": 6,
+            "img": "https://demo.creativethemes.com/blocksy/gadgets/wp-content/uploads/2022/05/article-image-6-768x637.webp",
+            "meta": "EXPIRIENCE",
+            "title": "Tristique Magna Amet Purus Gravida Quisblandit",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+        }
+    ]
+}

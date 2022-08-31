@@ -1,0 +1,149 @@
+
+    // --fontWeight: 400;
+    // --textTransform: none;
+    // --textDecoration: none;
+    // --fontSize: 16px;
+    // --lineHeight: 1.65;
+    // --letterSpacing: 0em;
+    // --buttonFontWeight: 500;
+    // --buttonFontSize: 15px;
+    // --has-classic-forms: var(--true);
+    // --has-modern-forms: var(--false);
+    // --form-field-height: 50px;
+    // --form-field-border-radius: 6px;
+    // --form-field-border-initial-color: var(--border-color);
+    // --form-field-border-focus-color: var(--paletteColor1);
+    // --form-selection-control-initial-color: var(--border-color);
+    // --form-selection-control-accent-color: var(--paletteColor1);
+    // paletteColor1: #5B38ED;
+    // paletteColor2: #4928cf;
+    // paletteColor3: #4d5d6d;
+    // paletteColor4: #111518;
+    // paletteColor5: #E7EBEE;
+    // paletteColor6: #F3F5F7;
+    // paletteColor7: #FBFBFC;
+    // paletteColor8: #ffffff;
+    // --color: var(--paletteColor3);
+    // --linkInitialColor: var(--paletteColor1);
+    // --linkHoverColor: var(--paletteColor2);
+    // --selectionTextColor: #ffffff;
+    // --selectionBackgroundColor: var(--paletteColor1);
+    // --border-color: var(--paletteColor5);
+    // --headings-color: var(--paletteColor4);
+    // --content-spacing: 1.5em;
+    // --buttonMinHeight: 50px;
+    // --buttonShadow: none;
+    // --buttonTransform: none;
+    // --buttonTextInitialColor: var(--paletteColor4);
+    // --buttonTextHoverColor: #ffffff;
+    // --buttonInitialColor: var(--paletteColor6);
+    // --buttonHoverColor: var(--paletteColor2);
+    // --button-border: none;
+    // --buttonBorderRadius: 6px;
+    // --button-padding: 5px 20px;
+    // --normal-container-max-width: 1290px;
+    // --content-vertical-spacing: 60px;
+    // --narrow-container-max-width: 750px;
+    // --wide-offset: 130px;
+
+// themes color
+$paletteColor1: #5B38ED;
+$paletteColor2: #4928cf;
+$paletteColor3: #4d5d6d;
+$paletteColor4: #111518;
+$paletteColor5: #E7EBEE;
+$paletteColor6: #F3F5F7;
+$paletteColor7: #FBFBFC;
+$paletteColor8: #ffffff;
+
+// background-color
+$background_color_1: linear-gradient(145deg, #1e2024, #23272b);
+$background_color_2: #111518;
+$background_color_3: #fefefe;
+$background_color_4: #1b1c1d;
+$color_title_bg_1: rgba(30, 37, 48, 0.07);
+$color_title_bg_2: rgba(211, 218, 231, 0.07);
+// $color_title_bg_2: rgba(161, 166, 175, 0.07);
+    
+// box-shadow
+$shadow_1: 0px 20px 80px 0px rgba(193,199,212,0.2)!important;
+
+// Gradient
+$gradient_box_w: linear-gradient(145deg, #e2e8ec, #ffffff);
+$gradient_red_hover: linear-gradient(145deg, #ff014f, #d11414);
+$gradient_black_hover: linear-gradient(to right bottom, #212428, #16181c);
+
+// typo Color
+$linkInitialColor: rgba(255,255,255,0.5);
+
+// Gery Colors 
+$color_midgray: #9F9F9F;
+$color_midgray: #878787;
+$color_light: #E4E6EA;
+$color_lighter: #CED0D4;
+$color_lightest: #F0F2F5;
+$color_border: #E6E6E6;
+$color_white: #ffffff;
+$color_white_75: rgba(255, 255, 255, 0.75);
+
+// notify Colors
+$color_success: #3EB75E;
+$color_danger: #FF0003;
+$color_warning: #FF8F3C;
+$color_info: #1BA2DB;
+
+//Social icon colors
+$color_facebook: #3B5997;
+$color_twitter: #1BA1F2;
+$color_youtube: #ED4141;
+$color_linkedin: #0077B5;
+$color_pinterest: #E60022;
+$color_instagram: #C231A1;
+$color_vimeo: #00ADEF;
+$color_twitch: #6441A3;
+$color_discord: #7289da;
+
+// Font weight
+$p_light: 300;
+$p_regular: 400;
+$p_medium: 500;
+$p_semi_bold: 600;
+$p_bold: 700;
+$p_extra_bold: 800;
+$p_black: 900;
+
+//transition easing
+$transition: all 0.3s ease-in-out;
+
+// Font Family
+$font_primary: 'Poppins', sans-serif;
+
+//Fonts Size
+$font_size_b1: 18px;
+$font_size_b2: 22px;
+$font_size_b3: 14px;
+$font_size_b4: 13px;
+$font_size_b5: 16px;
+
+//Line Height
+$line_height_b1: 1.50;
+$line_height_b2: 1.6;
+$line_height_b3: 1.7;
+
+// Heading Font
+$h1: 70px;
+$h2: 60px;
+$h3: 50px;
+$h4: 40px;
+$h5: 30px;
+$h6: 20px;
+
+// Layouts Variation
+$lg_device: 'only screen and (min-width: 1199px)';
+$extra_device: 'only screen and (min-width: 1600px) and (max-width: 1919px)';
+$laptop_device: 'only screen and (min-width: 1200px) and (max-width: 1599px)';
+$lg_layout: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md_layout:'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm_layout:'only screen and (max-width: 767px)';
+$large_mobile: 'only screen and (max-width: 575px)';
+$small_mobile: 'only screen and (max-width: 479px)';

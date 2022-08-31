@@ -1,0 +1,64 @@
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0;
+    margin-bottom: 0rem;
+    list-style: none;
+}
+
+.breadcrumb_section{
+    width: 100%;
+    padding-top: 120px;
+    background-color: $paletteColor4;
+}
+
+.breadcrumb_section .inner{
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumb_section .inner .breadcrumb_item{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    @include apple_system_font;
+    font-weight: 600;;
+    text-transform: uppercase;
+    @include transition;
+
+    &::before{
+        color: #ffffff;
+    }
+
+    &:hover{
+        color: #ffffff;
+    }
+}
+
+.breadcrumb_section .inner .breadcrumb_item a:hover{
+    color: #ffffff;
+}
+
+.breadcrumb_section .inner .breadcrumb_item.active{
+    color: #ffffff;
+}
+
+.breadcrumb_section .inner .page_title{
+    margin-top: 8px;
+
+    @media #{$sm_layout} {
+        margin-top: 0px;
+    }
+}
+
+.breadcrumb_section .inner .page_title h2{
+    font-size: 60px;
+    font-weight: 700;
+    color: #ffffff;
+
+    @media #{$sm_layout} {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,43 @@
+.section_header{
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+
+.section_header .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @media #{$sm_layout} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 30px;
+    }
+}
+
+.section_header .inner .left_side .title{
+    font-size: 30px;
+    color: $paletteColor4;
+    font-weight: 700;
+    line-height: 1.5;
+
+    @media #{$sm_layout} {
+        text-align: center;
+    }
+}
+
+.section_header .inner .left_side .subtitle{
+    font-size: 16px;
+    @include apple_system_font;
+    color: $paletteColor3;
+
+    @media #{$sm_layout} {
+        text-align: center;
+    }
+}
+
+.section_header .inner .right_side .button{
+    @include button;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,87 @@
+.footer_section .inner{
+    background-color: #111518;
+    padding: 120px 0px;
+
+    @media #{$md_layout, $sm_layout} {
+        padding: 80px 0px;
+    }
+
+    @media #{ $sm_layout} {
+        padding: 60px 0px;
+        text-align: center;
+    }
+}
+
+.footer_section .inner .widget_area_1 .image{
+    margin-bottom: 24px;
+}
+
+.footer_section .inner .widget_area_1 p{
+    color: #ffffff80;
+    font-size: 16px;
+    @include apple_system_font;
+    margin-bottom: 24px;
+}
+
+.footer_section .inner .widget_area_2 .heading,
+.footer_section .inner .widget_area_3 .heading,
+.footer_section .inner .widget_area_4 .heading{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.footer_section .inner .widget_area_2 ul li:not(:last-child),
+.footer_section .inner .widget_area_3 ul li:not(:last-child){
+    margin-bottom: 0.2em;
+}
+
+.footer_section .inner .widget_area_2 ul li .link,
+.footer_section .inner .widget_area_3 ul li .link{
+    color: #ffffff80;
+    font-size: 16px;
+    @include apple_system_font;
+    @include transition;
+    
+    &:hover{
+        color: $paletteColor1;
+    }
+}
+
+.footer_section .inner .widget_area_4 p{
+    color: #ffffff80;
+    font-size: 16px;
+    @include apple_system_font;
+    margin-bottom: 24px;
+}
+
+.footer_section .inner .widget_area_1 .social_share{
+    @media #{ $sm_layout} {
+        justify-content: center;
+    }
+}
+
+.footer_section .copyright{
+    padding: 25px 0px;
+    background-color: #111518;
+
+    @media #{ $sm_layout} {
+        text-align: center;
+    }
+}
+
+.footer_section .copyright .footer_copyright{
+    font-size: 16px;
+    color: #ffffff80;
+    @include apple_system_font;
+}
+
+.footer_section .copyright .footer_copyright .link{
+    @include transition;
+
+    &:hover{
+        color: $paletteColor1;
+    }
+}

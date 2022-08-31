@@ -1,0 +1,26 @@
+.social_share{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.social_share .social_link{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.social_share .social_link .icon{
+    font-size: 18px;
+    color: $paletteColor4;
+    @include transition;
+
+    &:hover{
+        color: $paletteColor2;
+    }
+}

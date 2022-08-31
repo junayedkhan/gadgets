@@ -1,0 +1,106 @@
+.offer_section{
+    margin-top: 120px;
+    padding: 120px 0;
+    background-color: $paletteColor4;
+}
+
+.offer_section .left_side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.offer_section .left_side .toltip{
+    width: 350px;
+    height: auto;
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(40px) brightness(200%);
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    background-position: bottom right !important;
+    background-repeat: no-repeat !important;
+    background-size: 600px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    @media #{$small_mobile} {
+        display: none;
+    }
+}
+
+.offer_section .left_side .toltip .title{
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.offer_section .left_side .toltip .description{
+    font-size: 15px;
+    color: #ffffff;
+    @include apple_system_font;
+    line-height: 1.5;
+}
+
+.offer_section .image{
+    vertical-align: middle;
+}
+
+.right_side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer_section .content .subtitle{
+    font-size: 20px;
+    @include apple_system_font;
+    color: #ffffff;
+    opacity: 0.8;
+    font-weight: 700;
+    margin-bottom: 5px;
+    
+    @media #{$md_layout, $sm_layout} {
+        text-align: center;
+    }
+}
+
+.offer_section .content .title{
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+    @media #{$md_layout, $sm_layout} {
+        font-size: 35px;
+        text-align: center;
+    }
+}
+
+.offer_section .content .description{
+    font-size: 20px;
+    font-weight: 500;
+    @include apple_system_font;
+    color: #ffffff;
+    margin-bottom: 40px;
+
+    @media #{$md_layout, $sm_layout} {
+        text-align: center;
+    }
+}
+
+.offer_section .content .button_group{
+    @media #{$md_layout, $sm_layout} {
+        text-align: center;
+    }
+}
+
+.offer_section .content .button_group .button{
+    @include button;
+    padding: 15px 35px;
+}

@@ -1,0 +1,122 @@
+@mixin transition {
+    transition: all .12s cubic-bezier(.45,.05,.55,.95),flex 0s,max-width 0s;
+    -webkit-transition: all .12s cubic-bezier(.45,.05,.55,.95),flex 0s,max-width 0s;
+}
+
+@mixin apple_system_font {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@mixin button {
+    padding: 15px 25px;
+    @include apple_system_font;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    color: $paletteColor4;
+    background-color: $paletteColor6;
+    border: none;
+    @include transition;
+
+    &:hover {
+        background-color: $paletteColor1;
+        color: $paletteColor8;
+    }
+}
+
+@mixin category {
+    padding: 50px;
+    height: 624px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #fff;
+    box-shadow: $shadow_1;
+    @include transition;
+    cursor: pointer;
+}
+
+@mixin category_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center center!important;
+    background-repeat: no-repeat!important;
+    background-size: 80%!important;
+}
+
+@mixin input {
+    padding: 12px;
+    appearance: none;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid $paletteColor6;
+    border-radius: 3px;
+    background-color: transparent;
+    @include transition;
+
+    &:focus{
+        border: 1px solid $paletteColor1; 
+    }
+}
+
+@mixin textarea {
+    padding: 12px;
+    appearance: none;
+    outline: none;
+    width: 100%;
+    height: 147px;
+    resize: vertical;
+    font-size: 14px;
+    font-family: inherit;
+    color: $paletteColor3;
+    border: 1px solid $paletteColor6;
+    border-radius: 3px;
+    background-color: transparent;
+    @include transition;
+
+    &:focus{
+        border: 1px solid $paletteColor1; 
+    }
+}
+
+@mixin checkbox {
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    top: 3px;
+    min-width: 16px;
+    width: 16px;
+    height: 16px;
+    padding: 0 !important;
+    margin-right: 10px;
+    border-radius: 3px;
+    appearance: none;
+    border: 1px solid $paletteColor5;
+    cursor: pointer;
+    background: transparent;
+    @include transition;
+    position: relative;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        margin: auto;
+        width: 8px;
+        height: 5px;
+        border: 2px solid #fff;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+        z-index: 2;
+    }
+}
