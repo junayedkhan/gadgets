@@ -48,21 +48,6 @@ const PostExcerpt = ({ products }) => {
     }
   }
 
-  useEffect(() => {
-    const Selected = [];
-    const categoryNames = [...new Set(data.map((item) => item.meta))];
-    categoryNames.forEach(categoryName => Selected[categoryName] = true)
-    setIsSelected(Selected);
-    setCategory(categoryNames)
-  },[])
-
-  console.log(isSelected)
-
-  const handleCategorySelect = (item, index) => {
-    setIsSelected({...isSelected, [item] : true})
-    console.log(index + item)
-  }
-
   return (
     <section className="products_page">
       <div className="breadcrumb_section">
@@ -107,17 +92,7 @@ const PostExcerpt = ({ products }) => {
                     </div>
                   </Col>
                   <Col lg={4} md={12} sm={12}>
-                    <div className="filter_caregory">
-                      <h2 className="title">Category</h2>
-                      <div className="category_list"> 
-                        {category.map((item, index) => {
-                          return(
-                            <button key={index} onClick={() => handleCategorySelect(item, index)}>
-                              {item}</button>
-                          )
-                        })}                     
-                      </div>
-                    </div>
+
                   </Col>
                   <Col lg={4} md={12} sm={12}></Col>
                 </Row>
@@ -128,7 +103,6 @@ const PostExcerpt = ({ products }) => {
           <Row className='gy-5'>
             {data
               .filter((item) => {return item.price >= minRange && item.price <= maxRange})
-              // .filter((category) => isSelected[category.meta])
               .map((item, index) => {
                 return(
                   <Col lg={4} md={6} sm={6} key={index}>

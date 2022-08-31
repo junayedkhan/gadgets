@@ -7,9 +7,11 @@ import {
 } from "react-icons/fa";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import SocialShare from './SocialShare';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
 
+    const cartItems = useSelector(state => state.cart.cartItems)
     const [ isOpen, setIsOpen ] = useState(false)
     const openmenu = () => setIsOpen(!isOpen)
 
@@ -54,7 +56,9 @@ const Navbar = () => {
                             <FaSearch /></i>
                         <Link to={"/cart"}>
                             <i className="cart_btn">
-                                <FaShoppingCart /></i>
+                                <FaShoppingCart />
+                                <span className={cartItems.length === 0 ? "d-none" : "badge"}>{cartItems.length}</span>
+                            </i>
                         </Link>
                         <i className="menu_btn" onClick={openmenu}>
                             <AiOutlineMenu /></i>

@@ -1,20 +1,29 @@
 import React, { useState } from 'react'
 import { FaSpinner, FaRegHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/slice/CartSlice';
+import { useSelector} from 'react-redux';
 
 const Porduct = ({ img, title, price, meta, link }) => {
 
+const cartItems = useSelector(state => state.cart.cartItems)
 const [loading, setLoading] = useState(false)
 const [viewbutton, setViewbutton] = useState(false)
 const [addbutton, setAddbutton] = useState(true)
+const dispatch = useDispatch()
 
 const loader = () => {
     setLoading(true)
-    setInterval(() => {
-        setLoading(false)
-        setViewbutton(true)
-        setAddbutton(false)
-    }, 3000);
+    dispatch(addToCart({img, title, price, meta, link, }))
+    const data = cartItems.filter(item => item.link)
+    if(data){
+        setInterval(() => {
+            setLoading(false)
+            setAddbutton(false)
+            setViewbutton(true)
+        }, 1000);
+    }
 }
 
 return (

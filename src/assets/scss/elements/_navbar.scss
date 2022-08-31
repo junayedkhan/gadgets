@@ -100,6 +100,26 @@
     }
 }
 
+.nav_bar .dekstop_menu .nav_inner .action_button .cart_btn{
+    position: relative;
+}
+
+.nav_bar .dekstop_menu .nav_inner .action_button .cart_btn .badge{
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    background-color: $paletteColor1;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
 .nav_bar .dekstop_menu .nav_inner .action_button .menu_btn{
     display: none;
 

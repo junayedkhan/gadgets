@@ -7,6 +7,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { useGetProductQuery } from '../../redux/features/api/apiSlice';
 import RelatedPrloducts from './RelatedPrloducts';
 import img_01 from "../../assets/image/article-image-5.jpg";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/slice/CartSlice';
 
 export const ProductDetails = () => {
 
@@ -17,10 +19,12 @@ export const ProductDetails = () => {
     isSuccess,
     isError,
   } = useGetProductQuery(productId)
+  const dispatch = useDispatch()
 
   const [hover, setHover] = useState(0);
   const [rating, setRating] = useState(0)
   const [data, setData] = useState([])
+  const [quantity, setQuantity] = useState(1)
 
   const [state, setState] = useState({
     name: "",
@@ -42,7 +46,13 @@ export const ProductDetails = () => {
     setRating(0)
   }
 
-  console.log(data)
+  const increment = () => {
+    setQuantity(quantity + 1)
+  }
+
+  const decrement = () => {
+    quantity > 1 && setQuantity(quantity -1)
+  }
 
   return (
     <section className="product_details">
@@ -77,16 +87,16 @@ export const ProductDetails = () => {
                   <div className="cart_action">
                     <div className="product_quantity">
                       <div className="inner">
-                        <span className="increase">
+                        <span className="increase" onClick={increment}>
                           <BiPlus /></span>
-                        <span className="decrease">
+                        <span className="decrease" onClick={decrement}>
                           <BiMinus /></span>
-                        <input type="text" name="number" id="number" defaultValue={5} />
+                          <p className='quantity'>{quantity}</p>
                       </div>
                     </div>
                     <Link to={''}><button className="wishlist_button">
                       <FaRegHeart className="icon" /></button></Link>
-                    <button className="add_to_cart">
+                    <button className="add_to_cart" onClick={() => dispatch(addToCart({...product, quantity}))}>
                       Add to cart
                     </button>
                   </div>

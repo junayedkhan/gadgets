@@ -1,12 +1,21 @@
 import React from 'react'
 import { Container, Row, Col, Table } from 'react-bootstrap';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import product_2 from "../../assets/image/product-2.png"
-import { BiPlus, BiMinus } from "react-icons/bi";
+import { BiPlus, BiMinus, BiBell } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { increment, decrement, remove, clearCart } from '../../redux/slice/CartSlice';
 
-const index = () => {
-  return (
+const Index = () => {
+
+const cartItems = useSelector(state => state.cart.cartItems)
+const dispatch = useDispatch()
+const totalAmounts = cartItems.reduce((previousValue, currentValue) => {
+    return currentValue.price * currentValue.quantity + previousValue
+}, 0)
+
+return (
     <section className="cart_page">
         <div className="breadcrumb_section">
             <div className="inner">
@@ -23,9 +32,14 @@ const index = () => {
         </div>
         <Container>
             <div className="cart_from">
-                <Row>
-                    <Col lg={8} md={12} sm={12}>
-                        <Table responsive tableBorderless className="shop_table">
+                {cartItems.length === 0 ? 
+                    <div>
+                        <p className="cart_empty"><BiBell className='icon'/> Your cart is currently empty.</p>
+                        <Link to={"/products"} className='cart_empty_btn'>Return to shop</Link>
+                    </div> :
+                    <Row>
+                        <Col lg={8} md={12} sm={12}>
+                        <Table responsive className="shop_table">
                             <thead>
                                 <tr>
                                     <th className="product_name" colSpan={2}>Product</th>
@@ -35,86 +49,76 @@ const index = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                {cartItems.map((item, index) => {
+                                return(
+                                <tr key={index}>
                                     <td className="product_thumbnail">
-                                        <img src={product_2} alt="" />
+                                        <img src={item.img} alt={item.title} />
                                     </td>
                                     <td className="product">
-                                        <p className="name">AirPods Pro</p>
-                                        <p className="price">$120.00</p>
+                                        <p className="name">{item.title}</p>
+                                        <p className="price">{item.price}</p>
                                     </td>
                                     <td className="product_quantity">
                                         <div className="inner">
-                                            <span className="increase"><BiPlus /></span>
-                                            <span className="decrease"><BiMinus /></span> 
-                                            <input type="text" name="number" id="number" value={5} />
-                                        </div>         
+                                            <span className="increase" onClick={()=> dispatch(increment(item.link))}
+                                                >
+                                                <BiPlus />
+                                            </span>
+                                            <span className="decrease" onClick={()=> dispatch(decrement(item.link))}
+                                                >
+                                                <BiMinus />
+                                            </span>
+                                            <p className='quantity'>{item.quantity}</p>
+                                        </div>
                                     </td>
                                     <td className="product_subtotal">
-                                        <span>$120.00</span>
+                                        <span>${item.price * item.quantity}</span>
                                     </td>
                                     <td className="product_remove">
-                                        <span><MdDelete /></span>
+                                        <span onClick={()=> dispatch(remove(item.link))}>
+                                            <MdDelete /></span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td className="product_thumbnail">
-                                        <img src={product_2} alt="" />
-                                    </td>
-                                    <td className="product">
-                                        <p className="name">AirPods Pro</p>
-                                        <p className="price">$120.00</p>
-                                    </td>
-                                    <td className="product_quantity">
-                                        <div className="inner">
-                                            <span className="increase"><BiPlus /></span>
-                                            <span className="decrease"><BiMinus /></span> 
-                                            <input type="text" name="number" id="number" value={5} />
-                                        </div>         
-                                    </td>
-                                    <td className="product_subtotal">
-                                        <span>$120.00</span>
-                                    </td>
-                                    <td className="product_remove">
-                                        <span><MdDelete /></span>
-                                    </td>
-                                </tr>
+                                )
+                                })}
                             </tbody>
                         </Table>
                         <div className="coupon">
                             <input type="text" name="coupun" id="coupon" placeholder="Coupon code" />
                             <button>Apply coupon</button>
                         </div>
-                    </Col>
-                    <Col lg={4} md={12} sm={12}>
-                    <div className="cart_totals ">
-                        <h2>Cart totals</h2>
-                        <div className="shop_table">
-                            <div className="cart_subtotal">
-                                <p data-title="name">Subtotal</p>
-                                <p data-title="Subtotal">
-                                    <span className="amount">
-                                    <span className="currencySymbol">$</span>2,471.00</span>
-                                </p>
+                        </Col>
+                        <Col lg={4} md={12} sm={12}>
+                        <div className="cart_totals ">
+                            <h2>Cart totals</h2>
+                            <div className="shop_table">
+                                <div className="cart_subtotal">
+                                    <p data-title="name">Subtotal</p>
+                                    <p data-title="Subtotal">
+                                        <span className="amount">
+                                            <span className="currencySymbol">$</span>{totalAmounts.toFixed(2)}</span>
+                                    </p>
+                                </div>
+                                <div className="order_total">
+                                    <p data-title="name">Total</p>
+                                    <p data-title="total">
+                                        <span className="amount">
+                                            <span className="currencySymbol">$</span>{totalAmounts.toFixed(2)}</span>
+                                    </p>
+                                </div>
                             </div>
-                            <div className="order_total">
-                                <p data-title="name">Total</p>
-                                <p data-title="total">
-                                    <span className="amount">
-                                    <span className="currencySymbol">$</span>2,471.00</span>
-                                </p>
-                            </div>
+                            <button className="checkout">
+                                Proceed to checkout
+                            </button>
                         </div>
-                        <button className="checkout">
-                            Proceed to checkout
-                        </button>
-                    </div>
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
+                }
             </div>
         </Container>
     </section>
   )
 }
 
-export default index;
+export default Index;
