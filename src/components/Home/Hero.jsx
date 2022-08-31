@@ -12,7 +12,6 @@ import {
 } from "react-icons/fa";
 import { BsClockHistory } from "react-icons/bs";
 import hero_img_1 from "../../assets/image/home_hero_image.jpg"
-import { Link } from 'react-router-dom';
 
 const Hero = () => {
 

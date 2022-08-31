@@ -5,7 +5,7 @@ import { BiPlus, BiMinus, BiBell } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { increment, decrement, remove, clearCart } from '../../redux/slice/CartSlice';
+import { increment, decrement, remove} from '../../redux/slice/CartSlice';
 
 const Index = () => {
 

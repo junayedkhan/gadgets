@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Porduct from './Porduct';
@@ -11,9 +11,9 @@ const PostExcerpt = ({ products }) => {
   const [maxRange, setMaxRange] = useState(1000)
   const [value, setValue] = useState(1)
   const [valueRight, setValueRight] = useState(1)
-  const [isSelected, setIsSelected] = useState({});
-  const [data, setData] = useState(products)
-  const [category, setCategory] = useState([])
+  // const [isSelected, setIsSelected] = useState({});
+  // const [data, setData] = useState(products)
+  // const [category, setCategory] = useState([])
   const accordion = ()=> setOpen(!open)
 
   const minInpurRange = (e) =>{
@@ -101,7 +101,7 @@ const PostExcerpt = ({ products }) => {
           </div>
 
           <Row className='gy-5'>
-            {data
+            {products
               .filter((item) => {return item.price >= minRange && item.price <= maxRange})
               .map((item, index) => {
                 return(
