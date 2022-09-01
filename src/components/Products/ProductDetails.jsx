@@ -32,6 +32,8 @@ export const ProductDetails = () => {
     comment: "",
   })
 
+  // "server": "json-server -p 9000 -w src/data/db.json"
+
   const handleOnChange = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -45,6 +47,8 @@ export const ProductDetails = () => {
     setState({...state, name: "", email: "", comment: ""})
     setRating(0)
   }
+  
+  // "server": "json-server -p 8000 -w src/data/db.json"
 
   const increment = () => {
     setQuantity(quantity + 1)
@@ -69,7 +73,7 @@ export const ProductDetails = () => {
             <Col lg={6} md={12} sm={12}>
               <div className="summary">
                 <h1 className="product_title">{product.title}</h1>
-                <p className="product_price">{product.price}</p>
+                <p className="product_price">${product.price}</p>
                 <div className="product_short_desc">
                   <p>
                     Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Massa
